@@ -25,6 +25,7 @@ public class XmlServlet extends HttpServlet {
 		out.println("Request parameter has user name as: " + userName );
 		out.println("Session parameter has user name as: " + (String)session.getAttribute("savedUserName") );
 		out.println("Context parameter has user name as: " + (String)servletContext.getAttribute("savedUserName") );
+		response.getWriter().write("<h3> Init  Parameter has default user name as: "+ this.getServletConfig().getInitParameter("defaultName")+"</h3>");
 	}
 	
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
