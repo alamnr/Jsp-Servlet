@@ -8,11 +8,19 @@
 <title>Success</title>
 </head>
 <body>
-	<h3>
-		Welcome
+	<!-- <h3>
+		Welcome -->
 		<%-- <%=((User)session.getAttribute("user")).getUserName()%> --%>
-		 <%=((User)request.getAttribute("user")).getUserName()%>
+		 <%-- <%=((User)request.getAttribute("user")).getUserName()%>
 		!
+	</h3> --%>
+	<h3>
+	Welcome
+	<jsp:useBean id="user" scope="request" class="org.koushik.javabrains.dto.User">
+		<jsp:setProperty property="userName" name="user" value="NewUser"/>
+	</jsp:useBean>
+	<%-- <%=user.getUserName() %> --%>
+	<jsp:getProperty property="userName" name="user"/>
 	</h3>
 </body>
 </html>
